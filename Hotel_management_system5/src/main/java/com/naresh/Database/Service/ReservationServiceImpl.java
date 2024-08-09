@@ -80,4 +80,21 @@ public class ReservationServiceImpl implements ReservationService{
 		return availableRooms;
 	}
 
+	//   consuming Rest Api
+
+	@Override
+	public List<Integer> consumingGetAvailableRooms() {
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		return null;
+	}
+
 }
