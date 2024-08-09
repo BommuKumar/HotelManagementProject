@@ -14,4 +14,7 @@ public class GoaDto {
    public void ajaygoa()
   {
   }
+   public void swamigoa()
+   {
+   }
 }
