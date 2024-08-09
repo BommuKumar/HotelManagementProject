@@ -5,5 +5,8 @@ public class GoaDto {
   public void gotogoa()
   {
   }
+   public void gogoa()
+  {
+  }
 
 }
