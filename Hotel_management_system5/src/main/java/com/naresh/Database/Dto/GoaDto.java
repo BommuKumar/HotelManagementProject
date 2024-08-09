@@ -11,4 +11,7 @@ public class GoaDto {
   public void nogoa()
   {
   }
+   public void ajaygoa()
+  {
+  }
 }
