@@ -8,5 +8,7 @@ public class GoaDto {
    public void gogoa()
   {
   }
-
+  public void nogoa()
+  {
+  }
 }
