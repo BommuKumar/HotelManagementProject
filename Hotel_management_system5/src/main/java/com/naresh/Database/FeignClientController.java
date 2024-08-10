@@ -1,5 +1,6 @@
 package com.naresh.Database;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,16 +13,16 @@ import com.naresh.Database.Service.FeignClientService;
 
 
 @RestController
-@RequestMapping(path="")
+@RequestMapping(path="feign")
 public class FeignClientController {
 
-	
+	@Autowired
 	FeignClientService feignClientService;
 	
 	@GetMapping(path="get/all")
 	public ResponseEntity<?> getAllRoomes()
 	{
-   return ResponseEntity.status(HttpStatus.OK).body(feignClientService.getAllAvailableRooms());
+     return ResponseEntity.status(HttpStatus.OK).body(feignClientService.getAllAvailableRooms());
 		
 	}
 }

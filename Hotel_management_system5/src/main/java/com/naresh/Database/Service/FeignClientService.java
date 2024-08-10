@@ -3,11 +3,15 @@ package com.naresh.Database.Service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.naresh.Database.FeignClients.FeignClients;
+
+@Service
 public class FeignClientService {
 	
 	@Autowired
-	com.naresh.Database.FeignClients.FeignClients feignClients;
+	FeignClients feignClients;
 	
 
 	
