@@ -17,7 +17,7 @@ public class GoaDto {
    public void swamigoa()
    {
    }
-    public void swamigoa()
+    public void swamigoa2()
    {
    }
 }
