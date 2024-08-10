@@ -20,4 +20,8 @@ public class GoaDto {
     public void swamigoa2()
    {
    }
+
+   public void swamigoa3()
+   {
+   }
 }
