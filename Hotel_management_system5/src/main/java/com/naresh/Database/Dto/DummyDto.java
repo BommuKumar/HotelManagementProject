@@ -8,6 +8,9 @@ public class DummyDto {
   public void swamigoa7()
            {
            }
+ public void swamigoa8()
+           {
+           }
 
 
 
