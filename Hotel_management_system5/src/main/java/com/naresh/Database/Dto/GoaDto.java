@@ -32,4 +32,7 @@ public class GoaDto {
     public void swamigoa5()
    {
    }
+    public void swamigoa6()
+   {
+   }
 }
