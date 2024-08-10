@@ -23,4 +23,21 @@ public interface RoomRepository extends JpaRepository<Room, Integer> {
 	
 	   public List<Room> getAllAvailableRooms();
 	
+	@Query(value="select r.* from room r inner Join hotel h on r.hotel_id=h.hotel_id where r.price<:bPrice and h.hotel_name=:hotelName",nativeQuery = true)
+	
+	 public List<Room> getRoomsBelowPrice(@Param("bPrice") int price,@Param("hotelName") String hotelName);
+	
+	
+	
+	
+	
+	
+	
+	 @Query(value=" select r.* from room r inner Join hotel h on r.hotel_id= h.hotel_Id where h.hotel_name=:hotelName and r.availability='Booked'",nativeQuery = true)
+	List<Room> getAllBookedRooms(@Param("hotelName") String hotelName);
+	 
+	 
+	 
+	 
+	 
 }

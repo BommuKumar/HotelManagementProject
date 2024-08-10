@@ -2,6 +2,7 @@ package com.naresh.Database.Entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
@@ -34,6 +35,7 @@ public class Room {
 	
 	
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name="hotel_Id")
 	private Hotel hotel;
 	
@@ -45,6 +47,7 @@ public class Room {
 
 
 	@OneToMany(cascade = CascadeType.ALL,mappedBy="room")
+	@JsonIgnore
 	private List<Reservations> reservations;
 
 

@@ -30,7 +30,26 @@ public class Reservations {
 	 private LocalDate checkOutDate;
 	 
 	 
-	 @ManyToOne
+	 private String isCancelled;
+	 
+	 
+	 
+	 
+	 public String getIsCancelled() {
+		return isCancelled;
+	}
+	public void setIsCancelled(String isCancelled) {
+		this.isCancelled = isCancelled;
+	}
+
+
+
+
+
+
+
+
+	@ManyToOne
 	 @JoinColumn(name="Room_id")
 	 private Room room;
 	  
@@ -97,56 +116,31 @@ public class Reservations {
 
 
 
+ 
 
 
 
-
-	 
-
-
-
-
-
-	public Reservations(int reservationId, String guestName, LocalDate checkInDate, LocalDate checkOutDate, Room room) {
+	public Reservations(int reservationId, String guestName, LocalDate checkInDate, LocalDate checkOutDate,
+			String isCancelled, Room room) {
 		super();
 		this.reservationId = reservationId;
 		this.guestName = guestName;
 		this.checkInDate = checkInDate;
 		this.checkOutDate = checkOutDate;
+		this.isCancelled = isCancelled;
 		this.room = room;
 	}
-
-
-
-
-
-
-
-
 	@Override
 	public String toString() {
 		return "Reservations [reservationId=" + reservationId + ", guestName=" + guestName + ", checkInDate="
-				+ checkInDate + ", checkOutDate=" + checkOutDate + ", room=" + room + "]";
+				+ checkInDate + ", checkOutDate=" + checkOutDate + ", isCancelled=" + isCancelled + ", room=" + room
+				+ "]";
 	}
-
-
-
-
-
-
-
-
 	public LocalDate getCheckInDate() {
 		return checkInDate;
 	}
 
-
-
-
-
-
-
-
+ 
 	public void setCheckInDate(LocalDate checkInDate) {
 		this.checkInDate = checkInDate;
 	}
