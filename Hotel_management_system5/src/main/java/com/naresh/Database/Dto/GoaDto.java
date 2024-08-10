@@ -41,4 +41,8 @@ public class GoaDto {
   public void swamigoa10()
   {
   }
+
+    public void AjayGoa07()
+  {
+  }
 }
