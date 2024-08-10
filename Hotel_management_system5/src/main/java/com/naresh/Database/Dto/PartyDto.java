@@ -9,5 +9,9 @@ public class PartyDto {
 	  public void swamigoa6()
            {
            }
+	public void swamigoa7()
+           {
+           }
+
 
 }
