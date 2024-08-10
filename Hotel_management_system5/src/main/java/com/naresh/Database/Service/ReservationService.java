@@ -10,5 +10,7 @@ public interface ReservationService {
        public String bookRoom(Reservations reservations,int roomId);	
        
        public List<Integer> getAvailableRooms();
+       
+       public List<Integer> consumingGetAvailableRooms();
 
 }
