@@ -28,4 +28,8 @@ public class GoaDto {
    public void swamigoa4()
    {
    }
+
+    public void swamigoa5()
+   {
+   }
 }
