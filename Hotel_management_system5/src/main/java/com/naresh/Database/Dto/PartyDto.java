@@ -6,5 +6,8 @@ public class PartyDto {
 	{
 		
 	}
+	  public void swamigoa6()
+           {
+           }
 
 }
