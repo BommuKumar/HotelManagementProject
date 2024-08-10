@@ -15,6 +15,12 @@ public class DummyDto {
  public void swamigoa9()
  {
  }
+ public void swamigoa10()
+ {
+ }
+ 
+
+
 
 
 
