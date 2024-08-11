@@ -51,4 +51,7 @@ public class GoaDto {
    public void kumar888()
   {
   }
+    public void kumar999()
+  {
+  }
 }
