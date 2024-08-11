@@ -5,6 +5,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -29,7 +30,8 @@ public class Hotel {
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "hotel")
 	private List<Room> room;
 	
-	
+	@Embedded
+	private HotelMetaData hotelMetaData;
 	
 
 	public Hotel(int hotelId) {
@@ -88,22 +90,30 @@ public class Hotel {
 
  
 
-	@Override
-	public String toString() {
-		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", address=" + address + ", phoneNumber="
-				+ phoneNumber + ", room=" + room + "]";
+	public HotelMetaData getHotelMetaData() {
+		return hotelMetaData;
 	}
 
+	public void setHotelMetaData(HotelMetaData hotelMetaData) {
+		this.hotelMetaData = hotelMetaData;
+	}
 
-	public Hotel(int hotelId, String hotelName, String address, String phoneNumber, List<Room> room) {
+	public Hotel(int hotelId, String hotelName, String address, String phoneNumber, List<Room> room,
+			HotelMetaData hotelMetaData) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.address = address;
 		this.phoneNumber = phoneNumber;
 		this.room = room;
+		this.hotelMetaData = hotelMetaData;
 	}
 
+	@Override
+	public String toString() {
+		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", address=" + address + ", phoneNumber="
+				+ phoneNumber + ", room=" + room + ", hotelMetaData=" + hotelMetaData + "]";
+	}
 
 	public Hotel() {
 		super();
