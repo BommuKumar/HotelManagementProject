@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.naresh.Database.Dto.HotelInfoDataInterfaceProjection;
 import com.naresh.Database.Dto.HotelInfoDto;
 import com.naresh.Database.Entity.Hotel;
-import com.naresh.Database.Entity.Reservations;
+ 
 
 @Repository
 public interface HotelRepository extends JpaRepository<Hotel, Integer> {
@@ -52,12 +52,6 @@ public interface HotelRepository extends JpaRepository<Hotel, Integer> {
 		
 		
 		
-			
-			
-			
-			
-			
-			
 			
 			
 			

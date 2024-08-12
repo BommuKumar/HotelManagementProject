@@ -10,13 +10,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.naresh.Database.Entity.Room;
+import com.naresh.Database.Service.FunctinalInterfaceImpl;
 
 @RestController
 public class FunctinalInterfaceController {
 
-	@Autowired
-	com.naresh.Database.Service.FunctinalInterfaceImpl functinalInterfaceImpl;
 	
+	com.naresh.Database.Service.FunctinalInterfaceImpl functinalInterfaceImpl;
+	@Autowired
+	public FunctinalInterfaceController(FunctinalInterfaceImpl functinalInterfaceImpl) {
+		super();
+		this.functinalInterfaceImpl = functinalInterfaceImpl;
+	}
+
 	@GetMapping(path="get/booked/rooms")
 	public ResponseEntity<List<Room>> getAllBookedRooms(@RequestParam("hotelName") String hotelName) {
 		

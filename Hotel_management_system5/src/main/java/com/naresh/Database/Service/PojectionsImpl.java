@@ -1,23 +1,30 @@
 package com.naresh.Database.Service;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.naresh.Database.customException.*;
 import com.naresh.Database.Dto.HotelInfoDataInterfaceProjection;
 import com.naresh.Database.Dto.HotelInfoDto;
 import com.naresh.Database.Dto.HotelWithRoomsInfoDto;
 import com.naresh.Database.Dto.RoomInfoDto;
-import com.naresh.Database.Entity.Hotel;
 import com.naresh.Database.Repository.HotelRepository;
 import com.naresh.Database.customException.HotelNotFoundWithName;
 
 @Service
 public class PojectionsImpl {
-     @Autowired 
+    
 	HotelRepository hotelRepository;
+     
+	  @Autowired 
+     public PojectionsImpl(HotelRepository hotelRepository) {
+		super();
+		this.hotelRepository = hotelRepository;
+	}
+
+ 
      
      // ***** Common **
      
