@@ -21,11 +21,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 public class HotelController {
-	@Autowired
+ 
 	HotelService hotelService;
 	
+	@Autowired
+	public HotelController(HotelService hotelService) {
+		super();
+		this.hotelService = hotelService;
+	}
+
 	@PostMapping(path="add/hotel/with/meta")
-	public ResponseEntity<?> addHotel(@RequestParam("hotel")String hotel,@RequestParam("file") MultipartFile file) throws IOException
+	public ResponseEntity<String> addHotel(@RequestParam("hotel")String hotel,@RequestParam("file") MultipartFile file) throws IOException
 	{
 		
 		System.out.println(hotel);

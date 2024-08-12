@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.naresh.Database.Entity.Hotel;
 import com.naresh.Database.Entity.HotelMetaData;
+import com.naresh.Database.customException.HotelNotFoundWithName;
 import com.naresh.Database.customException.HotelNotHaveAnyImages;
 @Service
 public class HotelServiceImpl implements HotelService{
@@ -56,7 +57,7 @@ public class HotelServiceImpl implements HotelService{
 	public String addOnlyHotelMetaData(MultipartFile file,int hotelId) throws IOException {
 
          
-		Hotel hotel=hotelRepository.findById(hotelId).get();
+		Hotel hotel=hotelRepository.findById(hotelId).orElseThrow(()->new HotelNotFoundWithName("hotel not found with id"+hotelId));
 		
 		  String uploadDir="C:\\HotelPics";
 		  
@@ -83,8 +84,9 @@ public class HotelServiceImpl implements HotelService{
 	@Override
 	public Path getHotelPics(String hotelName) throws IOException {
 
+		// optinal contains always non null object 
 
-		Hotel hotel=hotelRepository.findByHotelName(hotelName).get();
+		Hotel hotel=hotelRepository.findByHotelName(hotelName).orElseThrow(()->new HotelNotFoundWithName(hotelName));
 
 		
 		if(hotel.getHotelMetaData()==null)
@@ -96,9 +98,9 @@ public class HotelServiceImpl implements HotelService{
 		String filePath=hotel.getHotelMetaData().getFilePath();
 		
 		
-		Path sourcepath=Paths.get(filePath);
+		return  Paths.get(filePath);
 		
-		 return sourcepath;
+		   
 	 	 
 	}
 

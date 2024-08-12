@@ -10,11 +10,18 @@ import com.naresh.Database.FeignClients.FeignClients;
 @Service
 public class FeignClientService {
 	
-	@Autowired
+	 
 	FeignClients feignClients;
 	
 
-	
+	@Autowired
+	public FeignClientService(FeignClients feignClients) {
+		super();
+		this.feignClients = feignClients;
+	}
+
+
+
 	public List<Integer>  getAllAvailableRooms()
 	{
 		return  feignClients.getAllAvailableRooms().getBody();

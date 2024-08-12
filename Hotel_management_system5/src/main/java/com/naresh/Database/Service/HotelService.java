@@ -14,6 +14,6 @@ public interface HotelService {
 	
 	public abstract String addOnlyHotelMetaData(MultipartFile file,int hotelId) throws IOException;
 
-	public Path getHotelPics(String hotelName) throws IOException;
+	public   Path getHotelPics(String hotelName) throws IOException;
 
 }

@@ -41,17 +41,17 @@ public class ReservationServiceImpl implements ReservationService{
 	public String bookRoom(Reservations reservations,int roomId) {
 
 	
-		 if(!roomRepository.existsById(roomId))
-		  {
-			  throw new RoomNotExistedWithThisId("room not existed with id"+roomId+"please select existed room");
-		  }
+		
+		
+		  Room room=roomRepository.findById(roomId).orElseThrow(()->new RoomNotExistedWithThisId(""+roomId));
 		 
-		Room room=roomRepository.isRoomAvailable(roomId);
+		 
+		Room rooms=roomRepository.isRoomAvailable(roomId);
 		
 		
-		System.out.println(room);
+		System.out.println(rooms);
 		
-         if(room==null)
+         if(rooms==null)
          {
         	 throw new RoomAlreadyBooked("room already booked");
          }
@@ -66,12 +66,12 @@ public class ReservationServiceImpl implements ReservationService{
 		reservationsRepository.save(reservations);
          
 		
-		String  hotelName=roomRepository.findById(roomId).get().getHotel().getHotelName();
+		String  hotelName=room.getHotel().getHotelName();
 		
 		
-		room.setAvailability("Booked");
+		rooms.setAvailability("Booked");
 		
-		roomRepository.save(room);
+		roomRepository.save(rooms);
 		
 		return "room is booked sucessfully in"+hotelName;
 	}}
@@ -153,9 +153,9 @@ public class ReservationServiceImpl implements ReservationService{
 
 		//System.out.println("fi");
 		
-		List<Room> rooms=hotel.getRoom().stream().filter(room->room.getAvailability().equals("Available")).collect(Collectors.toList());
+		return hotel.getRoom().stream().filter(room->room.getAvailability().equals("Available")).collect(Collectors.toList());
 		
-		return rooms;
+	  
 	}
  
 	@Override

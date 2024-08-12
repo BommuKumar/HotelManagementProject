@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.naresh.Database.Dto.HotelInfoDataInterfaceProjection;
-import com.naresh.Database.Dto.HotelInfoDto;
-import com.naresh.Database.Dto.HotelWithRoomsInfoDto;
+ import com.naresh.Database.Dto.HotelWithRoomsInfoDto;
 import com.naresh.Database.Dto.RoomInfoDto;
-import com.naresh.Database.Entity.Hotel;
+ 
 import com.naresh.Database.Service.PojectionsImpl;
 
 @RestController
