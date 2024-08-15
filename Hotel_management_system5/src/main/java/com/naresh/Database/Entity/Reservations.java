@@ -2,6 +2,8 @@ package com.naresh.Database.Entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,6 +36,13 @@ public class Reservations {
 	 
 	 
 	 
+	// @JsonIgnore
+
+		@ManyToOne
+		 @JoinColumn(name="Room_id")
+		 private Room room;
+		  
+	 
 	 
 	 public String getIsCancelled() {
 		return isCancelled;
@@ -47,12 +56,7 @@ public class Reservations {
 
 
 
-
-
-	@ManyToOne
-	 @JoinColumn(name="Room_id")
-	 private Room room;
-	  
+ 
  
 	public int getReservationId() {
 		return reservationId;
